@@ -1,6 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './plugins/element.js'
+
+
+//导入全局样式
+import global from './assets/css/global.css';
+
+//导入字体图标
+import fontIcon from './assets/fonts/font-awesome.min.css';
 
 Vue.config.productionTip = false
 
