@@ -1,0 +1,34 @@
+/*   默认皮肤   */
+#app .el-header[data-v-7ba5bd90] {
+    line-height: 60px !important;
+    background-color: #48A2FF !important;
+    color: white !important;
+}
+
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #409EFF !important;
+    color: #FFF !important;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled):hover {
+    color: #409EFF !important;
+}
+
+
+.el-tag {
+    background-color:	#E1FFFF !important;
+    border-color:	#E1FFFF !important;
+    color: #409EFF !important;
+
+}
+
+.el-button--primary {
+    color: #FFF !important;
+    background-color: #409EFF !important;
+    border-color: #409EFF !important;
+}
+
+#app .el-footer[data-v-7ba5bd90] {
+    background-color: #48A2FF !important;
+}

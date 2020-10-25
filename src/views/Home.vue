@@ -7,11 +7,14 @@
         <el-card class="box-card">
 
 
-            <el-form class="demo-ruleForm">
+            <el-form class="demo-ruleForm" @submit.native.prevent>
 
                 <el-form-item>
 
-                    <el-input placeholder="请输入内容" v-model="searchText">
+                    <el-input placeholder="请输入内容"
+                              v-model="searchText"
+                              @keyup.native.enter="searchBtn()"
+                    >
 
                         <template slot="append">
 
@@ -55,14 +58,19 @@
         methods: {
             searchBtn: function () {
 
-                this.$router.push(
-                    {
-                        path: "/search",
-                        query: {
-                            wd: this.searchText
-                        }
-                    }
-                )
+
+                if(this.searchText.length<2){
+                    this.$message({
+                        showClose: true,
+                        message: '请输入关键字或关键字过短！',
+                        type: 'error'
+                    });
+                    return;
+                }
+
+
+
+                this.$router.push({ path: '/search', query: { wd: this.searchText }})
             },
         }
     }
@@ -94,9 +102,9 @@
 
 
         .advertising{
-            display: inline-block;
+            display: block;
             text-align: center;
-            width: 100%;
+            width: 250px;
             margin: 0 auto;
             margin-top: 10px;
 

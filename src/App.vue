@@ -10,8 +10,6 @@
 
                 <router-view></router-view>
 
-
-
             </el-main>
 
             <el-footer height="100">
@@ -43,7 +41,20 @@
                 adPath:ad
             }
         },
-        components: {}
+        components: {},
+        created:function(){
+
+            const loading = this.$loading({
+                lock: true,
+                text: 'Loading',
+                spinner: 'el-icon-loading',
+                background: 'rgba(0, 0, 0, 0.7)'
+            });
+            setTimeout(() => {
+                loading.close();
+            }, 500);
+
+        }
     }
 </script>
 
@@ -52,15 +63,23 @@
         width: 100%;
         height: 100%;
 
+        overflow: auto !important;
+        padding-right:0 !important;
+
         .el-header {
             line-height: 60px;
             background-color: #48A2FF;
             color: white;
+
+            a{
+                color: white;
+                text-decoration:none
+            }
         }
 
         .el-main {
             height: 100%;
-            min-height: 561px;
+            min-height: 594px;
             padding: 0;
 
             .logo {
@@ -77,6 +96,7 @@
                 max-width: 800px;
                 min-width: 280px;
                 margin: 0 auto;
+
 
                 .el-form {
                     margin-top: 20px;

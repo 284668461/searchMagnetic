@@ -9,14 +9,14 @@ Vue.use(VueRouter);
 const routes = [
     {path: '/',redirect: "/home"},
     {path: '/home',component: Home},
-    {path: '/search',component: Search},
+    {path: '/search',name:'search',component: Search},
     {path: '/detail',component: detail},
-]
+];
 
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     routes
-})
+});
 
 export default router
