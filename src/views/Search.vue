@@ -233,7 +233,6 @@
 
             > .box-card {
                 width: 100%;
-                /*min-height: 500px;*/
                 padding: 0;
                 border: none;
 
